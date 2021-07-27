@@ -1,0 +1,218 @@
+// @import './prismjs';
+@import './common.scss';
+
+// @font-face {
+//   src: url(/fonts/Gilroy-Bold.ttf);
+//   font-family: Gilroy-Bold;
+// }
+
+// @font-face {
+//   src: url(/fonts/Gilroy-Medium.ttf);
+//   font-family: Gilroy-Medium;
+// }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #f4f6f8;
+  font-family: 'Montserrat', sans-serif;
+  // font-family: 'Karla', 'Roboto', 'sans-serif';
+}
+
+a {
+  text-decoration: none;
+}
+
+:not(pre) > code {
+  //font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+  background-color: #eeeeee;
+  padding: 2px 4px;
+  direction: ltr;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+//START: Status
+.redFlag {
+  color: red;
+  vertical-align: middle;
+  cursor: pointer !important;
+}
+.greenFlag {
+  color: green;
+  vertical-align: middle;
+  cursor: pointer !important;
+}
+.blackFlag {
+  color: black;
+  vertical-align: middle;
+  cursor: pointer !important;
+}
+
+.blueStatus {
+  color: blue !important;
+  font-weight: bold !important;
+}
+.redStatus {
+  color: red !important;
+  font-weight: bold !important;
+}
+.greenStatus {
+  color: green !important;
+  font-weight: bold !important;
+}
+.otherStatus {
+  font-weight: bold !important;
+}
+//END: Status
+
+//START: Icon Color
+.email {
+  color: #212121 !important;
+}
+.facebook {
+  color: #3b5998 !important;
+}
+.twitter {
+  color: #2ca7e0 !important;
+}
+.linkedin {
+  color: #007bb6 !important;
+}
+.instagram {
+  color: #000000 !important;
+}
+.google-plus {
+  color: #f93f2d !important;
+}
+.whatsapp {
+  color: #25d366 !important;
+}
+.whatsapp-middle {
+  color: #fff !important;
+}
+.MuiButtonBase-root:hover .whatsapp-middle {
+  fill: #25d366 !important;
+}
+
+.telegram {
+  color: #139bd0 !important;
+}
+.telegram-middle {
+  fill: #fff !important;
+}
+.MuiButtonBase-root:hover .telegram-middle {
+  fill: #139bd0 !important;
+}
+
+.youtube {
+  color: #e02f2f !important;
+}
+.youtube-middle {
+  color: #fff !important;
+}
+.MuiButtonBase-root:hover .youtube-middle {
+  fill: #e02f2f !important;
+}
+// .whatsapp-middle:hover {
+//   color: #25d366 !important;
+// }
+.link {
+  color: #515151 !important;
+}
+//END: Icon Color
+
+.summary-item {
+  text-align: center;
+  padding: 16px;
+  color: $sc !important;
+  width: 100%;
+}
+.business-background {
+  background-color: #751f71 !important;
+  color: white !important;
+}
+.business-background > th {
+  color: white !important;
+}
+.business-background tr {
+  height: 50px;
+}
+.business-background tr td {
+  color: white !important;
+}
+.business-background tr th {
+  color: white !important;
+}
+
+//#region Scrolling Text
+.textVerticalScroll {
+  overflow: hidden;
+  padding-top: 0px !important;
+  //padding-top: 320px !important;
+  margin-top: 16px !important;
+}
+.textVerticalScroll p:nth-child(1) {
+  animation: marquee 25s linear infinite;
+  -moz-animation: marquee 25s linear infinite;
+  -webkit-animation: marquee 25s linear infinite;
+  animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -webkit-animation-delay: 5s;
+}
+.textVerticalScroll p:nth-child(1):hover {
+  animation-play-state: paused;
+}
+@-moz-keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, -100%);
+  }
+}
+@-webkit-keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, -100%);
+  }
+}
+@keyframes marquee {
+  0% {
+    -moz-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -moz-transform: translate(0, -100%);
+    -webkit-transform: translate(0, -100%);
+    transform: translate(0, -100%);
+  }
+}
+//#endregion
+
+.homeSubHeader {
+  color: #ee5928;
+}
+.formError {
+  color: #e53935;
+  font-size: 11px;
+  min-height: 1em;
+  font-weight: 400;
+  line-height: 1em;
+  letter-spacing: 0.33px;
+}
