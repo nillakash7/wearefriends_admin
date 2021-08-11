@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useMemo, useRef } from 'react';
+import React, { useContext, useState, useEffect, useMemo } from 'react';
 import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -50,12 +50,7 @@ const Partners = ({ roleID, countries, items, noOfTotalItems, actions }) => {
     if (countries.length === 0) actions.getCountries();
   }, []);
 
-  const firstUpdate = useRef(true);
   useEffect(() => {
-    if (firstUpdate.current) {
-      firstUpdate.current = false;
-      return;
-    }
     handleSearch(searchParam);
   }, [searchParam]);
   // #endregion

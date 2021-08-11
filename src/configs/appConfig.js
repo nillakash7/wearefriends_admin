@@ -2,6 +2,7 @@ export const APP_TITLE = 'ABC SCHOOL';
 export const pagingItems = [5, 10, 25, 50, 100];
 export const duplicateEmailUser = 9;
 export const DEFAULT_DATE_FORMAT = 'MMM DD, YYYY';
+export const DEFAULT_SYMBOL_ID = 1001;
 export const ROLE_ID = Object.freeze({
   ADMIN: 3,
   SUPPORT: 4
@@ -14,6 +15,7 @@ export const ACCOUNT_STATUS = Object.freeze({
   SUSPENDED: 3,
   ARCHIVED: 4
 });
+
 export const COMPANY_CATEGORY = Object.freeze({
   ALL: 0,
   WAF: 1,

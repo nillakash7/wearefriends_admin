@@ -8,10 +8,26 @@ import {
   AppForm,
   AppDatePicker,
   AppFormField,
-  AppAutoComplete
+  AppAutoComplete,
+  AppFormPicker
 } from '../../components/forms';
 import { AppSearchBtn, AppResetBtn } from '../../components/searchCtrl';
 import { initSearchValues } from './mlHelper';
+
+const memberTypes = [
+  {
+    value: 0,
+    text: 'All'
+  },
+  {
+    value: 1,
+    text: 'Invited'
+  },
+  {
+    value: 2,
+    text: 'Not Invited'
+  }
+];
 
 const MemberSearchCtrl = ({ countries, onSearch, onReset }) => {
   const classes = searchPanelStyles();
@@ -39,17 +55,17 @@ const MemberSearchCtrl = ({ countries, onSearch, onReset }) => {
           />
         </Grid>
         <Grid item md={2} sm={6} xs={12}>
+          <AppFormPicker
+            label="Member Type"
+            name="memberType"
+            options={memberTypes}
+          />
+        </Grid>
+        <Grid item md={2} sm={6} xs={12}>
           <AppFormField label="Username/Email" name="keyword" />
         </Grid>
 
-        <Grid
-          item
-          xl={3}
-          lg={4}
-          sm={6}
-          xs={12}
-          className={classes.buttonContainer}
-        >
+        <Grid item md={2} sm={6} xs={12} className={classes.buttonContainer}>
           <AppSearchBtn />
 
           <AppResetBtn />

@@ -55,7 +55,7 @@ const PartnerContextMenus = ({ item, handleMenuClick }) => {
           <ListItemIcon>
             <VerifiedUserIcon />
           </ListItemIcon>
-          <ListItemText primary="ACTIVATE" />
+          <ListItemText primary="APPROVE" />
         </MenuItem>
       )}
       {item.categoryID === COMPANY_CATEGORY.PARTNER && (
@@ -66,7 +66,7 @@ const PartnerContextMenus = ({ item, handleMenuClick }) => {
           <ListItemIcon>
             <BlockIcon />
           </ListItemIcon>
-          <ListItemText primary="DE-ACTIVATE" />
+          <ListItemText primary="DENY" />
         </MenuItem>
       )}
 

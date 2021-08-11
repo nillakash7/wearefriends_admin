@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useMemo, useRef } from 'react';
+import React, { useContext, useState, useEffect, useMemo } from 'react';
 import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -8,6 +8,7 @@ import mActions from '../../redux/actions/memberActions';
 import cActions from '../../redux/actions/lookupActions';
 import { Page, PageHeader } from '../../components/pageCtrl';
 import AppConfirmModal from '../../components/dialogs/AppConfirmModal';
+import AppModal from '../../components/dialogs/AppModal';
 import MemberSearchCtrl from './MemberSearchCtrl';
 
 import {
@@ -21,6 +22,7 @@ import { ToasterContext } from '../../App';
 const initState = {
   member: null,
   openConfirmDialog: false,
+  openPPDialog: false,
   title: '',
   description: '',
   actionType: 0
@@ -50,12 +52,12 @@ const MemberList = ({ roleID, countries, items, noOfTotalItems, actions }) => {
     if (countries.length === 0) actions.getCountries();
   }, []);
 
-  const firstUpdate = useRef(true);
+  // const firstUpdate = useRef(true);
   useEffect(() => {
-    if (firstUpdate.current) {
-      firstUpdate.current = false;
-      return;
-    }
+    // if (firstUpdate.current) {
+    //   firstUpdate.current = false;
+    //   return;
+    // }
     handleSearch(searchParam);
   }, [searchParam]);
   // #endregion
@@ -75,6 +77,7 @@ const MemberList = ({ roleID, countries, items, noOfTotalItems, actions }) => {
     return (
       data.keyword !== searchParam.keyword ||
       data.countryID !== searchParam.countryID ||
+      data.memberType !== searchParam.memberType ||
       data.startDate !== searchParam.startDate ||
       data.endDate !== searchParam.endDate
     );
@@ -214,6 +217,22 @@ const MemberList = ({ roleID, countries, items, noOfTotalItems, actions }) => {
   };
   // #endregion
 
+  const handlePPClick = (member) => {
+    setState((p) => ({
+      ...p,
+      member,
+      openPPDialog: true
+    }));
+  };
+
+  const onPPDialogClose = () => {
+    setState((p) => ({
+      ...p,
+      member: null,
+      openPPDialog: false
+    }));
+  };
+
   const tableData = useMemo(
     () => (
       <MemberTable
@@ -226,6 +245,7 @@ const MemberList = ({ roleID, countries, items, noOfTotalItems, actions }) => {
         onPageSizeChanged={onPageSizeChanged}
         onPageNoChanged={onPageNoChanged}
         handleMenuClick={handleMenuClick}
+        handlePPClick={handlePPClick}
         // handleRowClick={
         //   roleID !== ROLE_ID.ADMIN ? navigateToMemberDetail : null
         // }
@@ -260,6 +280,18 @@ const MemberList = ({ roleID, countries, items, noOfTotalItems, actions }) => {
         onClose={handleDialogClose}
         onConfirm={confirmDialog}
       />
+
+      <AppModal
+        title="Profile Picture"
+        isOpen={state.openPPDialog}
+        onClose={onPPDialogClose}
+      >
+        <div className={classes.lgImgContainer}>
+          {state.member && (
+            <img src={state.member.ppUrl} alt={state.member.username} />
+          )}
+        </div>
+      </AppModal>
     </Page>
   );
 };

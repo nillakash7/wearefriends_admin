@@ -41,11 +41,11 @@ const Partners = ({ roleID, countries, items, noOfTotalItems, actions }) => {
     toaster.error(error.message);
   };
 
-  const handleSearch = async (params) => {
-    const res = await actions.getMembers(params);
-    if (!res.isSuccess) handleError(res);
-  };
-
+  // const handleSearch = async (params) => {
+  //   const res = await actions.getMembers(params);
+  //   if (!res.isSuccess) handleError(res);
+  // };
+  const handleSearch = async () => {};
   useEffect(() => {
     if (countries.length === 0) actions.getCountries();
   }, []);

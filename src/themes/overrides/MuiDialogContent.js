@@ -1,8 +1,8 @@
-import palette from '../palette';
+// import palette from '../palette';
 
 export default {
   root: {
-    padding: '16px 24px',
-    backgroundColor: palette.background.dialog
+    padding: '16px 24px'
+    // backgroundColor: palette.background.dialog
   }
 };

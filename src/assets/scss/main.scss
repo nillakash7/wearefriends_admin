@@ -79,6 +79,9 @@ a {
 //END: Status
 
 //START: Icon Color
+.MuiButtonBase-root:hover .main {
+  color: #24a699;
+}
 .email {
   color: #212121 !important;
 }
@@ -132,6 +135,13 @@ a {
 .link {
   color: #515151 !important;
 }
+
+// .like {
+//   // color: #565656 !important;
+// }
+// .MuiButtonBase-root:hover .like {
+//   fill: #e02f2f !important;
+// }
 //END: Icon Color
 
 .summary-item {

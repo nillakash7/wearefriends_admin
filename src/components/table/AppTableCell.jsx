@@ -11,7 +11,7 @@ import lookupHelper from '../../helpers/lookupHelper';
 import { DEFAULT_DATE_FORMAT } from '../../configs/appConfig';
 import AppLink from '../AppLink';
 
-const AppTableCell = ({ type, value, isHeader, className }) => {
+const AppTableCell = ({ type, value, isHeader, className, onClick }) => {
   const isNumber =
     type === 'decimal' || type === 'decimal8' || type === 'number';
 
@@ -41,8 +41,9 @@ const AppTableCell = ({ type, value, isHeader, className }) => {
       <div className="allCenter">
         <Avatar
           alt=""
-          style={{ cursor: 'pointer', width: 40, height: 40 }}
+          style={{ cursor: imgUrl ? 'pointer' : 'auto', width: 40, height: 40 }}
           src={imgUrl || ''}
+          onClick={onClick}
         />
         {/* <LazyImgLoader src={imgUrl} width="24px" alt={country.text} className="mr2" /> */}
       </div>
@@ -92,13 +93,15 @@ AppTableCell.propTypes = {
   // ]).isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   value: PropTypes.any,
-  isHeader: PropTypes.bool
+  isHeader: PropTypes.bool,
+  onClick: PropTypes.func
   // children: PropTypes.node
 };
 AppTableCell.defaultProps = {
   className: '',
   value: '',
-  isHeader: false
+  isHeader: false,
+  onClick: () => {}
   // children: ''
 };
 export default AppTableCell;

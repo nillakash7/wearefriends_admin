@@ -4,6 +4,7 @@ function getSearchParam(searchParam) {
   return {
     keyword: searchParam.keyword ? searchParam.keyword.trim() : '',
     countryID: parseInt(searchParam.countryID, 10),
+    memberType: parseInt(searchParam.memberType || 0, 10),
     startDate: searchParam.startDate,
     endDate: searchParam.endDate,
     orderBy: searchParam.orderBy,

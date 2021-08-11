@@ -47,3 +47,17 @@ export const getQueryParam = (search, propName) => {
 export const getFullName = (user) => {
   return user.lastName ? `${user.firstName} ${user.lastName}` : user.firstName;
 };
+
+export const isEmpty = (txt) => {
+  if (!txt) return true;
+  return txt.trim().length === 0;
+};
+
+export const isEmptyArray = (arr) => {
+  if (!arr) return true;
+  return arr.length === 0;
+};
+
+export const getTrimText = (txt) => {
+  return !txt ? '' : txt.trim();
+};

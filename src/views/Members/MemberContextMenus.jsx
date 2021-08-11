@@ -8,7 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 // import DescriptionIcon from '@material-ui/icons/Description';
 import ArchiveIcon from '@material-ui/icons/Archive';
 import RowingIcon from '@material-ui/icons/Rowing';
-import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
+// import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import BlockIcon from '@material-ui/icons/Block';
 
 import AppContextMenu from '../../components/AppContextMenu';
@@ -48,7 +48,7 @@ const MemberContextMenus = ({ item, handleMenuClick }) => {
         </ListItemIcon>
         <ListItemText primary="Details" />
       </MenuItem> */}
-      {item.status !== ACCOUNT_STATUS.VERIFIED && (
+      {/* {item.status !== ACCOUNT_STATUS.VERIFIED && (
         <MenuItem
           onClick={(evt) => itemClick(evt, MEMBER_ACTIONS.VERIFY)}
           className="contextMenuItem"
@@ -58,7 +58,7 @@ const MemberContextMenus = ({ item, handleMenuClick }) => {
           </ListItemIcon>
           <ListItemText primary="VERIFY" />
         </MenuItem>
-      )}
+      )} */}
       {item.status !== ACCOUNT_STATUS.SUSPENDED && (
         <MenuItem
           onClick={(evt) => itemClick(evt, MEMBER_ACTIONS.SUSPEND)}

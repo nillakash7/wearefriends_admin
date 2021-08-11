@@ -29,6 +29,11 @@ export const getLeftMenus = (role) => {
       icon: RssFeedIcon
     },
     {
+      title: 'Reported Posts',
+      path: routePaths.REPORTED_POSTS,
+      icon: RssFeedIcon
+    },
+    {
       title: 'Members',
       path: routePaths.MEMBERS,
       icon: PeopleAltOutlinedIcon

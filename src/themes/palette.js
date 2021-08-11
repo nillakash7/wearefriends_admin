@@ -56,7 +56,8 @@ export default {
     warning: colors.amber[700]
   },
   border: {
-    default: '#F4F6F8', // #ebebeb
+    default: '1px solid #d8d8d9', // #ebebeb
+    dark: '1px solid #00000026', // #ebebeb
     paper: wh,
     media: 'lightgray'
   },

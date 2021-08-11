@@ -9,6 +9,7 @@ import lookupReducer from './lookupReducer';
 import bgReducer from './bgReducer';
 import memberReducer from './memberReducer';
 import partnerReducer from './partnerReducer';
+import postReducer from './postReducer';
 
 // import myProfileReducer from './profileReducer';
 
@@ -18,6 +19,7 @@ const appReducer = combineReducers({
   // myProfile: myProfileReducer,
   lookupData: lookupReducer,
   bgData: bgReducer,
+  postInfo: postReducer,
   memberInfo: memberReducer,
   partnerInfo: partnerReducer
 });

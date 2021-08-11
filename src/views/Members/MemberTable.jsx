@@ -29,6 +29,7 @@ const MemberTable = ({
   onPageSizeChanged,
   onPageNoChanged,
   handleMenuClick,
+  handlePPClick,
   handleRowClick
 }) => {
   const classes = tableStyles();
@@ -46,6 +47,7 @@ const MemberTable = ({
         key={`${item.memberID}_${h.name}`}
         type={h.type}
         value={value}
+        onClick={() => handlePPClick(item)}
       />
     );
   };
@@ -119,6 +121,7 @@ MemberTable.propTypes = {
   onPageSizeChanged: PropTypes.func.isRequired,
   onPageNoChanged: PropTypes.func.isRequired,
   handleMenuClick: PropTypes.func.isRequired,
+  handlePPClick: PropTypes.func.isRequired,
   handleRowClick: PropTypes.func
 };
 

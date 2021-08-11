@@ -52,12 +52,22 @@ const getRoutes = [
           {
             path: routePaths.POSTS,
             exact: true,
-            component: load(import('./views/Posts/Posts'))
+            component: load(import('./views/Post/Posts/Posts'))
+          },
+          {
+            path: routePaths.REPORTED_POSTS,
+            exact: true,
+            component: load(import('./views/Post/ReportedPosts/ReportedPosts'))
           },
           {
             path: routePaths.ADD_POST,
             exact: true,
-            component: load(import('./views/AddPost/AddPost'))
+            component: load(import('./views/Post/AddPost/AddPost'))
+          },
+          {
+            path: `${routePaths.POST_DETAIL}/:pID`,
+            exact: true,
+            component: load(import('./views/Post/PostDetail/PostDetail'))
           },
           {
             path: routePaths.MEMBERS,

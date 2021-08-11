@@ -14,6 +14,7 @@ export const initSearchValues = {
   startDate: null,
   endDate: null,
   countryID: 0,
+  memberType: 0,
   keyword: ''
 };
 export function getSearchParams() {
@@ -32,7 +33,7 @@ export const getMemberTableHeaders = (roleID) => {
   const headers = [
     {
       title: 'Photo',
-      name: 'profilePictureUrl',
+      name: 'ppThumbUrl',
       type: 'photo'
     },
     {
@@ -86,6 +87,10 @@ export const getMemberTableHeaders = (roleID) => {
 export const pageContainerStyles = makeStyles((theme) => ({
   results: {
     marginTop: theme.spacing(3)
+  },
+  lgImgContainer: {
+    minWidth: '300px',
+    textAlign: 'center'
   }
 }));
 

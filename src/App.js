@@ -28,6 +28,34 @@ export const ToasterContext = createContext();
 const App = () => {
   // useGoogleAnalytics();
   const { ToasterContainer, toaster } = useToaster();
+  // window.workInProgress = true;
+  // window.onbeforeunload = () => {
+  //   if (window.workInProgress) {
+  //     return 'Something in progress do you want to stop?';
+  //   }
+  //   return '';
+  // };
+  // window.addEventListener('beforeunload', () => {
+  //   const confirmationText = 'Something in progress do you want to stop?';
+  //   if (!window.workInProgress) {
+  //     // event.returnValue = confirmationText; // Gecko, Trident, Chrome 34+
+  //     return confirmationText; // Gecko, WebKit, Chrome <34
+  //   }
+  //   // Set flag back to false, just in case
+  //   // user stops loading page after clicking a link.
+  //   window.workInProgress = false;
+  //   return '';
+  // });
+
+  // document.addEventListener('click', (event) => {
+  //   if (event.target.tagName.toLowerCase() === 'a') {
+  //     disableConfirmation = true;
+  //   }
+  // });
+  // document.addEventListener('submit', (event) => {
+  //   disableConfirmation = true;
+  // });
+
   return (
     <StoreProvider store={store}>
       <ThemeProvider theme={theme}>
