@@ -34,13 +34,18 @@ export const getMemberTableHeaders = (roleID) => {
       name: 'profilePictureUrl',
       type: 'photo'
     },
+    // {
+    //   title: 'Partner ID',
+    //   name: 'partnerID',
+    //   type: 'number'
+    // },
     {
-      title: 'Partner ID',
-      name: 'partnerID',
-      type: 'number'
+      title: 'Partner Name',
+      name: 'partnerName',
+      type: 'string'
     },
     {
-      title: 'Name',
+      title: 'Company Name',
       name: 'companyName',
       type: 'string'
     },
@@ -50,8 +55,20 @@ export const getMemberTableHeaders = (roleID) => {
       type: 'string'
     },
     {
+      title: 'Country',
+      name: 'countryID',
+      type: 'country'
+    },
+    {
       title: 'Website',
       name: 'websiteUrl',
+      // customValue: 'Website',
+      type: 'url'
+    },
+    {
+      title: 'Invitation Link',
+      name: 'invitationLink',
+      customValue: 'Invitation Link',
       type: 'url'
     },
     {
@@ -60,15 +77,20 @@ export const getMemberTableHeaders = (roleID) => {
       type: 'date'
     },
     {
-      title: 'Category',
-      name: 'categoryText',
+      title: 'Status',
+      name: 'partnerStatus',
       type: 'string'
     },
     {
-      title: 'Status',
-      name: 'statusText',
+      title: 'Email Verification',
+      name: 'emailVerification',
       type: 'string'
     }
+    // {
+    //   title: 'Status',
+    //   name: 'statusText',
+    //   type: 'string'
+    // }
   ];
 
   if (roleID === ROLE_ID.ADMIN) {

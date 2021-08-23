@@ -45,7 +45,8 @@ const RootLayout = ({ route }) => {
 
   return (
     <div className={classes.container}>
-      <div className={`${classes.content} disable-select`}>
+      {/* <div className={`${classes.content} disable-select`}> */}
+      <div className={classes.content}>
         {systemDownMsg && (
           <div className={classes.messageContainer}>{systemDownMsg}</div>
         )}

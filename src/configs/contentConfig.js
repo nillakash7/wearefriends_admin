@@ -60,9 +60,9 @@ SUPPORTED_IMG_EXTENSION.set('.gif', 'image/gif');
 
 export const SUPPORTED_VOICE_EXTENSION = new Map();
 SUPPORTED_VOICE_EXTENSION.set('.mp3', 'audio/mpeg');
+SUPPORTED_VOICE_EXTENSION.set('.aac', 'audio/vnd.dlna.adts');
 SUPPORTED_VOICE_EXTENSION.set('.aac', 'audio/aac');
-// SUPPORTED_VOICE_EXTENSION.set('.aac', 'audio/vnd.dlna.adts');
-SUPPORTED_VOICE_EXTENSION.set('.m4a', 'audio/vnd.dlna.adts');
+SUPPORTED_VOICE_EXTENSION.set('.m4a', 'audio/x-m4a');
 
 export const SUPPORTED_VIDEO_EXTENSION = new Map();
 SUPPORTED_VIDEO_EXTENSION.set('.mp4', 'video/mp4');

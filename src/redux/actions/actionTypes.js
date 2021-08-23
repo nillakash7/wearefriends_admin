@@ -22,7 +22,7 @@ export default {
 
   // #endregion
 
-  // #region Members
+  // #region POSTS
   GET_POSTS_SUCCESS: 'GET_POSTS_SUCCESS',
   GET_REPORTED_POSTS_SUCCESS: 'GET_REPORTED_POSTS_SUCCESS',
   GET_POST_DETAIL_SUCCESS: 'GET_POST_DETAIL_SUCCESS',
@@ -38,7 +38,6 @@ export default {
 
   TOGGLE_LIKE_TO_POST_SUCCESS: 'TOGGLE_LIKE_TO_POST_SUCCESS',
   TOGGLE_LIKE_TO_COMMENT_SUCCESS: 'TOGGLE_LIKE_TO_COMMENT_SUCCESS',
-
   // #endregion
 
   // #region Members

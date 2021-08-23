@@ -11,7 +11,14 @@ import lookupHelper from '../../helpers/lookupHelper';
 import { DEFAULT_DATE_FORMAT } from '../../configs/appConfig';
 import AppLink from '../AppLink';
 
-const AppTableCell = ({ type, value, isHeader, className, onClick }) => {
+const AppTableCell = ({
+  type,
+  value,
+  customValue,
+  isHeader,
+  className,
+  onClick
+}) => {
   const isNumber =
     type === 'decimal' || type === 'decimal8' || type === 'number';
 
@@ -49,12 +56,15 @@ const AppTableCell = ({ type, value, isHeader, className, onClick }) => {
       </div>
     );
   };
-  const getUrl = (url) => {
+  const getUrl = (url, _customValue) => {
     if (!url) return '-';
-    return <AppLink url={url} text={url} target="_blank" />;
+    if (_customValue)
+      return <AppLink url={url} text={_customValue} target="_blank" />;
+    const curl = url.replace('https://', '').replace('http://', '');
+    return <AppLink url={url} text={curl} target="_blank" />;
   };
 
-  const getContent = (_type, _value) => {
+  const getContent = (_type, _value, _customValue) => {
     if (_type === 'date' && _value)
       return moment(_value).format(DEFAULT_DATE_FORMAT);
     if (_type === 'decimal') return format2Decimal(_value);
@@ -62,7 +72,7 @@ const AppTableCell = ({ type, value, isHeader, className, onClick }) => {
     if (_type === 'photo') return getImgColumn(_value);
     if (_type === 'country') return getCountryColumn(_value);
     if (_type === 'gender') return lookupHelper.getGenderText(_value);
-    if (_type === 'url') return getUrl(_value);
+    if (_type === 'url') return getUrl(_value, _customValue);
     return _value;
   };
 
@@ -70,7 +80,7 @@ const AppTableCell = ({ type, value, isHeader, className, onClick }) => {
     <TableCell className={clsx(className, alignClass)}>
       {/* <Typography dangerouslySetInnerHTML={{ __html: children }} /> */}
       {isHeader && value}
-      {!isHeader && getContent(type, value)}
+      {!isHeader && getContent(type, value, customValue)}
       {/* {children} */}
     </TableCell>
   );
@@ -93,6 +103,8 @@ AppTableCell.propTypes = {
   // ]).isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   value: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  customValue: PropTypes.any,
   isHeader: PropTypes.bool,
   onClick: PropTypes.func
   // children: PropTypes.node
@@ -100,6 +112,7 @@ AppTableCell.propTypes = {
 AppTableCell.defaultProps = {
   className: '',
   value: '',
+  customValue: '',
   isHeader: false,
   onClick: () => {}
   // children: ''

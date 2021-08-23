@@ -36,9 +36,13 @@ const PartnerTable = ({
   const getActionColumn = (item) => {
     return <DotMenu item={item} handleMenuClick={handleMenuClick} />;
   };
+  const getEmailColumn = (item) => {
+    return <a href={`mailto: ${item.emailAddress}`}>{item.emailAddress}</a>;
+  };
 
   const getCell = (h, item) => {
     let value = item[h.name];
+    if (h.name === 'emailAddress') value = getEmailColumn(item);
     if (h.name === 'actions') value = getActionColumn(item);
 
     return (
@@ -46,6 +50,7 @@ const PartnerTable = ({
         key={`${item.memberID}_${h.name}`}
         type={h.type}
         value={value}
+        customValue={h.customValue}
       />
     );
   };
